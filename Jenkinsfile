@@ -1,3 +1,7 @@
+properties([
+  pipelineTriggers([pollSCM('H/2 * * * *')])
+])
+
 node {
   docker.image('python:2-alpine').inside {
     try {
